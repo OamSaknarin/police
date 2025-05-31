@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Police by Oam</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Sarabun', sans-serif;
+      background-color: #f4f8fc;
+      color: #003366;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .search-box {
+      text-align: center;
+      margin: 20px auto;
+    }
+
+    .search-box input {
+      padding: 10px 15px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 80%;
+      max-width: 400px;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .menu a {
+      background-color: #0055aa;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      min-width: 180px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s, background-color 0.3s;
+    }
+
+    .menu a:hover {
+      background-color: #003f88;
+      transform: scale(1.05);
+    }
+
+    .menu i {
+      margin-right: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .menu a {
+        width: 100%;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><i class="fas fa-book"></i> สรุปเนื้อหานายสิบ สายอำนวยการ</h1>
+  </header>
+
+  <div class="search-box">
+    <input type="text" id="search" placeholder="ค้นหาหมวดวิชา...">
+  </div>
+
+  <div class="menu" id="menu">
+    <a href="mathematics.html"><i class="fas fa-calculator"></i> Mathematics</a>
+    <a href="thai.html"><i class="fas fa-language"></i> Thai Language</a>
+    <a href="law.html"><i class="fas fa-scale-balanced"></i> Law</a>
+    <a href="librarianship.html"><i class="fas fa-book-reader"></i> Librarianship</a>
+    <a href="english.html"><i class="fas fa-spell-check"></i> English</a>
+    <a href="computer.html"><i class="fas fa-computer"></i> Computer</a>
+    <a href="test.html"><i class="fas fa-gamepad"></i> TEST</a>
+  </div>
+
+  <script>
+    const search = document.getElementById('search');
+    const menu = document.getElementById('menu');
+    const links = menu.querySelectorAll('a');
+
+    search.addEventListener('input', () => {
+      const keyword = search.value.toLowerCase();
+      links.forEach(link => {
+        link.style.display = link.textContent.toLowerCase().includes(keyword) ? 'block' : 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>
